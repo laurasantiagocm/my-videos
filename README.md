@@ -17,6 +17,8 @@ Para esse teste você deve usar o **Rails 4.2.10** e **PostgreSQL**.
 O código deverá ser escrito em **inglês**.
 Os commits deverão estar no imperativo, primeira letra maiúscula e em inglês.
 
+Espera-se também que o código seja de fácil leitura, buscando seguir os princípios do clean code a fim de tornar mais fácil a manutenção do mesmo.
+
 **Elementos básicos:**
 - CATEGORIA: divisão que o vídeo se inclui, pode ser marcada como favorita;
 - COMENTÁRIO: tem um autor (nome), o texto em si e data de criação.
@@ -34,6 +36,6 @@ Parâmetros: id da Categoria.
 Retorno: conjunto de vídeos (links, títulos) no formato JSON (sem comentários).
 
 OBS: desde que a essência dos requisitos básicos sejam respeitados, aceitamos mudanças na arquitetura da informação proposta e nas disposições das telas.
-Estaremos a disposição para tirar dúvidas sobre o projeto pelo Telegram: @phxev (Paulo Henrique). 
+Estaremos a disposição para tirar dúvidas sobre o projeto pelo Telegram: @phxev (Paulo Henrique) e @lorranmonteiro (Lorran). 
 
 Boa sorte!

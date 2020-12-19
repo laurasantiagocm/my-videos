@@ -1,0 +1,15 @@
+<h1 class="mt-4">Edit Comment</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><%= link_to 'Dashboard', root_path %></li>
+    <li class="breadcrumb-item"><%= link_to 'Comments', comments_path %></li>
+    <li class="breadcrumb-item active">Edit</li>
+</ol>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Edit Comment
+    </div>
+    <div class="card-body">
+        <%= render partial: 'form' %>
+    </div>
+</div>

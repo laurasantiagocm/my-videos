@@ -1,0 +1,41 @@
+<h1 class="mt-4">Videos</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><%= link_to 'Dashboard', root_path %></li>
+    <li class="breadcrumb-item active">Videos</li>
+</ol>
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center justify-content-between">
+        Videos
+        <%= link_to 'New', new_video_path, class: "btn btn-primary" %>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Video URL</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Title</th>
+                        <th>Video URL</th>
+                        <th>Category</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <% @videos.each do |video| %>
+                        <tr>
+                            <td><%= video.title %></td>
+                            <td><%= video.youtube_link %></td>
+                            <td><%= video.category.name %></td>
+                            <td><%= link_to 'Edit', edit_video_path(video) %> - <%= link_to 'Destroy', video_path(video), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

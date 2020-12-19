@@ -1,0 +1,40 @@
+<h1 class="mt-4">Categories</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><%= link_to 'Dashboard', root_path %></li>
+    <li class="breadcrumb-item active">Categories</li>
+</ol>
+<div class="card mb-4">
+    <div class="card-header d-flex align-items-center justify-content-between">
+        Categories
+        <%= link_to 'New', new_category_path, class: "btn btn-primary" %>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Favorite</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Favorite</th>
+                        <th>Actions</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <% @categories.each do |category| %>
+                        <tr>
+                            <td><%= category.name %></td>
+                            <td><%= category.favorite %></td>
+                            <td><%= link_to 'Edit', edit_category_path(category) %> - <%= link_to 'Destroy', category_path(category), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

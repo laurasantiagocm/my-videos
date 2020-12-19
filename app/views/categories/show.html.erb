@@ -1,0 +1,6 @@
+<h1 class="mt-4">Página de <%= @category.name %></h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><%= link_to 'Dashboard', root_path %></li>
+    <li class="breadcrumb-item"><%= link_to 'Categories', categories_path %></li>
+    <li class="breadcrumb-item active"><%= @category.name %></li>
+</ol>

@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 class VideosController < ApplicationController
-  before_action :set_video, only: [:show, :edit, :update, :destroy]
+  before_action :set_video, only: %i[show edit update destroy]
 
   def index
     @videos = Video.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @video = Video.new
@@ -52,11 +53,12 @@ class VideosController < ApplicationController
   end
 
   private
-    def set_video
-      @video = Video.find(params[:id])
-    end
 
-    def video_params
-      params.require(:video).permit(:title, :youtube_link, :category_id)
-    end
+  def set_video
+    @video = Video.find(params[:id])
+  end
+
+  def video_params
+    params.require(:video).permit(:title, :youtube_link, :category_id)
+  end
 end

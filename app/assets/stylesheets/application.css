@@ -12,4 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require styles
  */
+
+ #layoutSidenav_content{
+   padding-left: 0px!important;
+ }

@@ -30,7 +30,11 @@
                 <tbody>
                     <% @videos.each do |video| %>
                         <tr>
-                            <td><%= video.title %></td>
+                            <td>
+                                <%= link_to video_path(video) do %>
+                                    <%= video.title %>
+                                <% end %>
+                            </td>
                             <td><%= video.youtube_link %></td>
                             <td><%= video.category.name %></td>
                             <td><%= link_to 'Edit', edit_video_path(video) %> - <%= link_to 'Destroy', video_path(video), method: :delete, data: {confirm: 'Are you sure?'} %></td>

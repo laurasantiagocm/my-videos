@@ -10,9 +10,11 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
+    @videos = Video.all
   end
 
   def edit
+    @videos = Video.all
   end
 
   def create

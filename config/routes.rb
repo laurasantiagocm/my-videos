@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :categories
   resources :comments
   resources :videos
+
+  post '/create_comment', to: 'videos#create_comment'
 end

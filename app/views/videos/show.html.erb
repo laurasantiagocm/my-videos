@@ -4,3 +4,27 @@
     <li class="breadcrumb-item"><%= link_to 'Videos', videos_path %></li>
     <li class="breadcrumb-item active"><%= @video.id %></li>
 </ol>
+
+<iframe width="560" height="315" src="<%= embbed_url(@video) %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+
+<div id="comment_section">
+    <%= render(partial: "comment", collection: @comments) %>
+</div>
+
+<h2 class="mt-2">Add a Comment</h2>
+
+<%= form_for @comment, remote: true, url: create_comment_path do |f| %>
+  <div class="form-group">
+      <label class="small mb-1">Author Name</label>
+      <%= f.text_field :author_name, class: "form-control py-4", placeholder: "Name", required: true %>
+  </div>
+  <div class="form-group">
+    <label>Comment</label>
+    <%= f.text_area :comment_body, class: "form-control", required: true %>
+  </div>
+  <%= f.hidden_field :video_id, value: @video.id %>
+  <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+      <%= f.submit 'Submit', class: "btn btn-primary" %>
+  </div>
+<% end %>

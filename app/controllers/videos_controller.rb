@@ -7,7 +7,10 @@ class VideosController < ApplicationController
     @videos = Video.all
   end
 
-  def show; end
+  def show
+    @comment = Comment.new
+    @comments = @video.comments
+  end
 
   def new
     @video = Video.new
@@ -52,6 +55,12 @@ class VideosController < ApplicationController
     end
   end
 
+  def create_comment
+    @comment = Comment.new(comment_params)
+    @comment.save
+    @comments = Video.find(params[:comment][:video_id]).comments
+  end
+
   private
 
   def set_video
@@ -60,5 +69,9 @@ class VideosController < ApplicationController
 
   def video_params
     params.require(:video).permit(:title, :youtube_link, :category_id)
+  end
+
+  def comment_params
+    params.require(:comment).permit(:author_name, :comment_body, :video_id)
   end
 end

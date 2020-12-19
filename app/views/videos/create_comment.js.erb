@@ -1,0 +1,8 @@
+<% if @comment.errors.any? %>
+<% else %>
+  document.querySelectorAll(".form-control").forEach(element => {
+    element.value = "";
+  });
+
+  $('#comment_section').html('<%= j render partial: "/videos/comment", collection: @comments, as: :comment %>')
+<% end %>

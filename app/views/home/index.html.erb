@@ -12,7 +12,6 @@
       <% category.videos.each do |video| %>
         <div class="card text-center" style="width: 18rem;">
           <div class="card-body">
-            <iframe src="<%= embbed_url(video) %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-100"></iframe>
             <h5 class="card-title">
               <%= link_to video_path(video) do %>
                 <%= video.title %>

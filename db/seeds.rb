@@ -13,7 +13,7 @@
   )
 end
 
-15.times do |i|
+50.times do |i|
   Video.create(
     title: "Video #{i}",
     youtube_link: "https://youtu.be/9hnPTEs9g54",

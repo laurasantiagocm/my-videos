@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+
         <title>MyVideos</title>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,6 +14,26 @@
 
     </head>
     <body class="sb-nav-fixed">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <%= link_to 'My Videos', root_path, class: "navbar-brand" %>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <%= link_to 'Home', root_path, class: "nav-link" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Videos', videos_path, class: "nav-link" %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to 'Categories', categories_path, class: "nav-link" %>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_content">
                 <main>

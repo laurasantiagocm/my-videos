@@ -1,0 +1,26 @@
+<h1 class="mt-4">Home</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"><%= link_to 'Dashboard', root_path %></li>
+</ol>
+
+<% @categories.each do |category| %>
+  <div class="row ml-1">
+    <%= link_to category_path(category) do %>
+      <h3><%= category.name %></h3>
+    <% end %>
+    <div class="card-columns">
+      <% category.videos.each do |video| %>
+        <div class="card text-center" style="width: 18rem;">
+          <div class="card-body">
+            <iframe src="<%= embbed_url(video) %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-100"></iframe>
+            <h5 class="card-title">
+              <%= link_to video_path(video) do %>
+                <%= video.title %>
+              <% end %>
+            </h5>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

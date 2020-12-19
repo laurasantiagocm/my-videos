@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'categories#index'
+  root to: 'home#index'
   resources :categories
   resources :comments
   resources :videos

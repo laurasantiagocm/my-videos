@@ -17,4 +17,24 @@
 
  #layoutSidenav_content{
    padding-left: 0px!important;
+   margin-left: 0px!important;
  }
+
+
+ @media (min-width: 576px) {
+  .card-columns {
+      column-count: 2!important;
+  }
+}
+
+@media (min-width: 926px) {
+  .card-columns {
+      column-count: 3!important;
+  }
+}
+
+@media (min-width: 1216px) {
+  .card-columns {
+      column-count: 4!important;
+  }
+}

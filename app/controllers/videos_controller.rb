@@ -28,6 +28,8 @@ class VideosController < ApplicationController
       if @video.save
         format.html { redirect_to @video, notice: 'Video was successfully created.' }
       else
+        @categories = Category.all
+        flash.now[:alert] = @video.errors.full_messages[0]
         format.html { render :new }
       end
     end
@@ -38,6 +40,8 @@ class VideosController < ApplicationController
       if @video.update(video_params)
         format.html { redirect_to @video, notice: 'Video was successfully updated.' }
       else
+        @categories = Category.all
+        flash.now[:alert] = @video.errors.full_messages[0]
         format.html { render :edit }
       end
     end

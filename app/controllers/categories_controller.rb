@@ -22,6 +22,7 @@ class CategoriesController < ApplicationController
       if @category.save
         format.html { redirect_to categories_path, notice: 'Category was successfully created.' }
       else
+        flash.now[:alert] = @category.errors.full_messages[0]
         format.html { render :new }
       end
     end
@@ -32,6 +33,7 @@ class CategoriesController < ApplicationController
       if @category.update(category_params)
         format.html { redirect_to categories_path, notice: 'Category was successfully updated.' }
       else
+        flash.now[:alert] = @category.errors.full_messages[0]
         format.html { render :edit }
       end
     end

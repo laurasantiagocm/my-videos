@@ -5,7 +5,7 @@
   </div>
   <div class="form-group">
     <label class="small mb-1">Video URL</label>
-    <%= f.text_field :youtube_link, class: "form-control py-4", placeholder: "Video URL", required: true %>
+    <%= f.text_field :youtube_link, class: "form-control py-4", placeholder: "https://youtu.be/XXXXXXXXXXX or https://www.youtube.com/watch?v=XXXXXXXXXXX", required: true %>
   </div>
   <%= f.select("category_id", @categories.collect {|c| [ c.name, c.id ] }) %>
   <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">

@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  *= require styles
+ *= require iziToast
  */
+
 
  #layoutSidenav_content{
    padding-left: 0px!important;

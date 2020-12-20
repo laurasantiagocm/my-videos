@@ -1,4 +1,10 @@
 <% if @comment.errors.any? %>
+  <% @comment.errors.each do |atrib, error| %>
+    iziToast.error({
+        title: 'Error',
+        message: "<%= atrib %> <%= error %>"
+    });
+  <% end %>
 <% else %>
   document.querySelectorAll(".form-control").forEach(element => {
     element.value = "";

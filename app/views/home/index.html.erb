@@ -6,8 +6,10 @@
 <% @categories.each do |category| %>
   <div class="row ml-1">
     <%= link_to category_path(category) do %>
-      <h3><%= category.name %></h3>
+      <h3><%= category.name %></h3><hr>
     <% end %>
+  </div>
+  <div class="row ml-1">
     <div class="card-columns">
       <% category.videos.each do |video| %>
         <div class="card text-center" style="width: 18rem;">
